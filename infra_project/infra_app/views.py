@@ -1,9 +1,17 @@
+from http import HTTPStatus
+
 from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('У меня получилось!', status_code=200)
+    res = HttpResponse()
+    res.content = 'У меня получилось!'
+    res.status_code = HTTPStatus.OK
+    return res
 
 
 def second_page(request):
-    return HttpResponse('А это вторая страница', status_code=200)
+    res = HttpResponse()
+    res.content = 'А это вторая страница'
+    res.status_code = HTTPStatus.OK
+    return res
